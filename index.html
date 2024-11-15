@@ -17,7 +17,7 @@
 
   <script>
     let interval = 7;
-    
+
     setInterval(() => {
       interval--;
       if (interval >= 0)
@@ -30,72 +30,10 @@
         console.log('timeout ------------');
         (new Audio("beep.mp3")).play();
 
-        // const audio = document.getElementById("myAudio");
-        // audio.play();
-
-        // const audio = document.getElementById("audio");
-        // debugger
-        // audio.play();
-
       }, interval * 1000);
     });
   </script>
 
-  <!-- <button onclick="playOnClick()">play on click</button>
-  <button onclick="playOnTimer()">play on timer 5sec</button>
-  <hr> -->
-  <!-- <div>
-    <input type="text">
-    ==
-    <input type="text">
-  </div> -->
-  <!-- <audio id="myAudio" controls autoplay>
-    <source src="beep.mp3" type="audio/mpeg">
-  </audio> -->
-
-  <!-- <iframe src="beep.mp3" allow="autoplay" id="audio" style="display:none"></iframe> -->
-  <script>
-    // setInterval(() => {
-    //   let v = [null, null];
-    //   document.querySelectorAll('input').forEach((el, i) => {
-    //     v[i] = el.value;
-    //   });
-    //   console.log('v: ', v);
-    //   if (v[0] && v[1] && v[0] === v[1]) {
-    //     // const s = new Audio("beep.mp3");
-    //     // s.play();
-    //     (new Audio("beep.mp3")).play();
-    //     document.querySelectorAll('input').forEach((el, i) => {
-    //       el.value = null;
-    //     });
-    //   }
-    // }, 1000);
-
-    // function playOnClick() {
-    //   // const s = new Audio("beep.mp3");
-    //   // s.play();
-    //   (new Audio("beep.mp3")).play();
-    // }
-    // function playOnTimer() {
-    //   setTimeout(() => {
-    //     // const s = new Audio("beep.mp3");
-    //     // s.play();
-    //     (new Audio("beep.mp3")).play();
-    //   }, 5000);
-    // }
-
-    // const playSound = async () => {
-    //   var sound = new Audio("beep.mp3");
-    //   sound.load();
-    //   var promise = sound.play();
-    //   if (promise) {
-    //     //Older browsers may not return a promise, according to the MDN website
-    //     promise.catch(function (error) {
-    //       console.error(error);
-    //     });
-    //   }
-    // };    
-  </script>
 </body>
 
 </html>
