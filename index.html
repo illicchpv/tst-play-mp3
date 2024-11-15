@@ -25,21 +25,21 @@
 
   <!-- <iframe src="beep.mp3" allow="autoplay" id="audio" style="display:none"></iframe> -->
   <script>
-    setInterval(() => {
-      let v = [null, null];
-      document.querySelectorAll('input').forEach((el, i) => {
-        v[i] = el.value;
-      });
-      console.log('v: ', v);
-      if (v[0] && v[1] && v[0] === v[1]) {
-        // const s = new Audio("beep.mp3");
-        // s.play();
-        (new Audio("beep.mp3")).play();
-        document.querySelectorAll('input').forEach((el, i) => {
-          el.value = null;
-        });
-      }
-    }, 1000);
+    // setInterval(() => {
+    //   let v = [null, null];
+    //   document.querySelectorAll('input').forEach((el, i) => {
+    //     v[i] = el.value;
+    //   });
+    //   console.log('v: ', v);
+    //   if (v[0] && v[1] && v[0] === v[1]) {
+    //     // const s = new Audio("beep.mp3");
+    //     // s.play();
+    //     (new Audio("beep.mp3")).play();
+    //     document.querySelectorAll('input').forEach((el, i) => {
+    //       el.value = null;
+    //     });
+    //   }
+    // }, 1000);
 
     function playOnClick() {
       // const s = new Audio("beep.mp3");
