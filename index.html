@@ -9,7 +9,37 @@
 
 <body>
 
-  <h1>7 секунд чтобы ткнуть куда-то сюда. тогда через 7 сек. от загрузки стр. будет бип</h1>
+  <h1>
+    <span id="sec" style="color:red;">7</span>
+    секунд чтобы ткнуть куда-то сюда. <br>
+    тогда через 7 сек. от загрузки стр. будет бип
+  </h1>
+
+  <script>
+    let interval = 7;
+    
+    setInterval(() => {
+      interval--;
+      if (interval >= 0)
+        document.getElementById('sec').innerText = interval;
+    }, 1000);
+
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('DOMContentLoaded ');
+      setTimeout(function () {
+        console.log('timeout ------------');
+        (new Audio("beep.mp3")).play();
+
+        // const audio = document.getElementById("myAudio");
+        // audio.play();
+
+        // const audio = document.getElementById("audio");
+        // debugger
+        // audio.play();
+
+      }, interval * 1000);
+    });
+  </script>
 
   <!-- <button onclick="playOnClick()">play on click</button>
   <button onclick="playOnTimer()">play on timer 5sec</button>
@@ -41,46 +71,30 @@
     //   }
     // }, 1000);
 
-    function playOnClick() {
-      // const s = new Audio("beep.mp3");
-      // s.play();
-      (new Audio("beep.mp3")).play();
-    }
-    function playOnTimer() {
-      setTimeout(() => {
-        // const s = new Audio("beep.mp3");
-        // s.play();
-        (new Audio("beep.mp3")).play();
-      }, 5000);
-    }
+    // function playOnClick() {
+    //   // const s = new Audio("beep.mp3");
+    //   // s.play();
+    //   (new Audio("beep.mp3")).play();
+    // }
+    // function playOnTimer() {
+    //   setTimeout(() => {
+    //     // const s = new Audio("beep.mp3");
+    //     // s.play();
+    //     (new Audio("beep.mp3")).play();
+    //   }, 5000);
+    // }
 
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('DOMContentLoaded ');
-  setTimeout(function () {
-    console.log('timeout ------------');
-    (new Audio("beep.mp3")).play();
-
-    // const audio = document.getElementById("myAudio");
-    // audio.play();
-
-    // const audio = document.getElementById("audio");
-    // debugger
-    // audio.play();
-
-  }, 7_000);
-});
-
-    const playSound = async () => {
-      var sound = new Audio("beep.mp3");
-      sound.load();
-      var promise = sound.play();
-      if (promise) {
-        //Older browsers may not return a promise, according to the MDN website
-        promise.catch(function (error) {
-          console.error(error);
-        });
-      }
-    };    
+    // const playSound = async () => {
+    //   var sound = new Audio("beep.mp3");
+    //   sound.load();
+    //   var promise = sound.play();
+    //   if (promise) {
+    //     //Older browsers may not return a promise, according to the MDN website
+    //     promise.catch(function (error) {
+    //       console.error(error);
+    //     });
+    //   }
+    // };    
   </script>
 </body>
 
