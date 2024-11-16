@@ -9,7 +9,7 @@
 
 <body>
 
-  <h1>
+  <h1 onclick="console.log('куда-то сюда event.isTrusted:', event.isTrusted)">
     <span id="sec" style="color:red;">7</span>
     секунд чтобы ткнуть куда-то сюда. <br>
     тогда через 7 сек. от загрузки стр. будет бип
@@ -31,6 +31,20 @@
         (new Audio("beep.mp3")).play();
 
       }, interval * 1000);
+
+      // пытаемся создать Event
+      // "Можно легко отличить «настоящее» событие от сгенерированного кодом.
+      // Свойство event.isTrusted принимает значение true для событий, 
+      // порождаемых реальными действиями пользователя, и false для генерируемых кодом."
+      let event = new MouseEvent("click", {
+        bubbles: true,
+        cancelable: true,
+        clientX: 100,
+        clientY: 100,
+        isTrusted: true, // :(
+      });
+      document.querySelector('h1').dispatchEvent(event);
+
     });
   </script>
 
